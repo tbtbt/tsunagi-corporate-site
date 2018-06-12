@@ -106,6 +106,9 @@ showGoogleMap = function ($div) {
 };
 // 問い合わせアドレス表示
 showInfoMail = function( $a, user, domain ) {
+	if(!domain) {
+		domain = window.location.hostname;
+	}
 	var addr = user + '@' + domain;
 	$a.attr('href','mailto:'+addr);
 	$a.text(addr);
